@@ -2,6 +2,10 @@ html {
   scroll-behavior: smooth;
 }
 
+p {
+  margin: 0.7vw 0vw;
+}
+
 @media only screen and (max-width: 449px){
 
     body {
