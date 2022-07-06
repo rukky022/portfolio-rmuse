@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Ruqayyah Muse</title>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500&family=Indie+Flower&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <div id="topStrip"></div>
+
+  <div class="navigation">
+    <ul>
+      <!-- <a href="index.html"><li>home</li></a> -->
+      <a href="index.html#projects"><li>my projects</li></a>
+      <a href="index.html#about"><li>about me</li></a>
+    </ul>
+  </div>
+
+  <script>
+    // The debounce function receives our function as a parameter
+    const debounce = (fn) => {
+
+      // This holds the requestAnimationFrame reference, so we can cancel it if we wish
+      let frame;
+
+      // The debounce function returns a new function that can receive a variable number of arguments
+      return (...params) => {
+
+        // If the frame variable has been defined, clear it now, and queue for next frame
+        if (frame) {
+          cancelAnimationFrame(frame);
+        }
+
+        // Queue our function call for the next frame
+        frame = requestAnimationFrame(() => {
+
+          // Call our function and pass any params we received
+          fn(...params);
+        });
+
+      }
+    };
+
+
+    // Reads out the scroll position and stores it in the data attribute
+    // so we can use it in our stylesheets
+    const storeScroll = () => {
+      document.documentElement.dataset.scroll = window.scrollY;
+    }
+
+    // Listen for new scroll events, here we debounce our `storeScroll` function
+    document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+
+    // Update scroll position for first time
+    storeScroll();
+  </script>
+
+</head>
+
+<body>
+
+  <div class="introContainer">
+      <div class="block">
+        <p>hi! the name's</p>
+        <h1 id="name">RUQAYYAH</h1>
+        <div class="details">
+          <p> junior at Georgia State. </p>
+          <p> aspiring data scientist. </p>
+          <p> reader. blogger. foodie. </p>
+          <p> also, a total language geek. </p>
+        </div>
+      </div>
+
+      <!-- <script>
+        window.addEventListener("load", myInit, true); function myInit(){
+          setTimeout(typeWriterOne, 50);
+        };
+
+        var i = 0;
+        var name = "RUQAYYAH";
+        var speed = 250;
+
+        function typeWriterOne() {
+          if (i < name.length) {
+            document.getElementById("name").innerHTML += name.charAt(i);
+            i++;
+            setTimeout(typeWriterOne, speed);
+          }
+        }
+      </script> -->
+
+      <!-- <div class="next"><a href="#about"><i class="fa fa-angle-down" id="firstScroll"></i></a></div> -->
+  </div>
+
+
+  <a class="anchor" id="projects"> </a>
+
+  <div class="webProjContainer">
+    <div class="block">
+
+      <h1>some coding projects</h1>
+
+      <div class="tableProj">
+
+        <div class="proj">
+          <div class="img"><img src="alfarajTradingLLC.png"></div>
+          <div class="text">
+            <p><span class="bold">Title:</span> <a target="_blank" href="https://alfarajtrading.com/">AlFaraj Trading LLC</a></p>
+            <p><span class="bold">Langs:</span> HTML, CSS, JavaScript, PHP</p>
+            <p><span class="bold">Overview:</span> A site designed to give information about a food products seller. Built with HTML & CSS, utilized PHP for contact form, and designed Products page item selector with JavaScript. Fully responsive.</p>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="img"><img src="github.png"></div>
+          <div class="text">
+            <p><span class="bold">Langs:</span> Python, Java</p>
+            <p><span class="bold">Overview:</span> GitHub repositories with projects written in Python/Java. Includes Python code for Infix & Postfix Calculators, Binary Search Tree manipulation, and a data analysis project.</p>
+            <p><a target="_blank" href="https://github.com/rukky022/Python-Code-Projects">Python Projects Repo</a> // <a target="_blank" href="https://github.com/rukky022/Java-Code-Projects">Java Projects Repo</a></p>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="img"><img src="paylessHomeRepairs.png"></div>
+          <div class="text">
+            <p><span class="bold">Title:</span> <a target="_blank" href="https://paylesshomerepairs.com/">Payless Home Repairs</a></p>
+            <p><span class="bold">Langs:</span> HTML, CSS</p>
+            <p><span class="bold">Overview:</span> A one-page site designed to give information about a home repair comapny. Built with HTML & CSS, and is responsive.</p>
+          </text>
+        </div>
+      </div>
+
+        <div class="proj">
+          <div class="img"><img src="edeenAcademy.png"></div>
+          <div class="text">
+            <p><span class="bold">Title:</span> <a target="_blank" href="http://edeenacademy.com/">eDeen Academy</a></p>
+            <p><span class="bold">Langs:</span> HTML, CSS, JavaScript</p>
+            <p><span class="bold">Overview:</span> An educational website that uses a slideshow and embedded videos. One HTML file used to populate 48 lessons; JavaScript is used to populate the appropriate video, and configure the "Previous" and "Next" buttons.</p>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="img"><img src="glitch.png"></div>
+          <div class="text">
+            <p><span class="bold">Langs:</span> p5 JavaScript</p>
+            <p><span class="bold">Overview:</span> Some p5 JS projects worked on during Google CSSI 2021.</p>
+            <p><a target="_blank" style="font-weight:400;" href="https://glitch.com/edit/#!/r-cssi-day-12-snake">Snake Game</a> (<a target="_blank" style="font-weight:400;" href="https://r-cssi-day-12-snake.glitch.me">demo</a>) //
+              <a target="_blank" style="font-weight:400;" href="https://glitch.com/edit/#!/fireboy-and-watergirl-cssi">Fireboy & Watergirl</a> // <a target="_blank" style="font-weight:400;" href="https://glitch.com/edit/#!/javachips-matchingcardgames">Matching Card Game</a> (<a target="_blank" style="font-weight:400;" href="https://javachips-matchingcardgames.glitch.me">demo</a>)</p>
+          </div>
+        </div>
+
+        <div class="proj">
+          <div class="img"><img src="diveIntoTheBooks.png"></div>
+          <div class="text">
+            <p><span class="bold">Title:</span> <a target="_blank" href="https://rukky022.github.io/Blog-Design-DiveIntoTheBooks/index.html">Dive Into the Books</a></p>
+            <p><span class="bold">Langs:</span> HTML, CSS</p>
+            <p><span class="bold">Overview:</span> A sample book blog website design. Website isn't functional or responsive; simply built for design practice.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <a class="anchor" id="about"> </a>
+
+  <div class="aboutContainer">
+    <div class="block">
+
+      <div class="left">
+        <h1>about me</h1>
+        <p>Helo. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod. </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p><span class="bold">favorites:</span> Code Name Helene (book), Avatar: The Last Airbender (show), spring rolls (snack), boba tea (drink)</p>
+      </div>
+
+      <div class="right" id="right">
+        <h1>languages</h1>
+        <div class="rowt"> <p>HTML & CSS</p> <p>Java Script</p> </div>
+        <div class="rowb"> <p>Java</p> <p>Python</p> </div>
+        <div class="rowt1"> <p>Arabic - Conversational</p> <p>Spanish - Conversational</p> </div>
+        <div class="rowt2"> <p>Yoruba - Working Proficiency</p> </div>
+      </div>
+
+      <div class="wide">
+        <p class="bold"><span style="font-family:'Indie Flower', cursive;color: white;">contact me at</span> <a href="mailto:ruqayyahmuse@gmail.com">ruqayyahmuse [at] gmail [dot] com</a></p>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+<footer>
+
+  <div class="foot">
+    <p>© copyright 2022 ruqayyah muse | background nature image by  <a href="https://unsplash.com/photos/tZ1qARxHcB8"> @nika9477   </a> (unsplash)</p>
+  </div>
+
+</footer>
+
+</html>
